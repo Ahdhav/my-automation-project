@@ -1,0 +1,19 @@
+name: Feature Branch Verification
+
+# Run this automation whenever code is pushed to your feature branch
+on:
+  push:
+    branches:
+      - 'feature/*'
+
+jobs:
+  run-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch code
+        uses: actions/checkout@v4
+
+      - name: Execute script
+        run: |
+          echo "Your automation folder structure is set up perfectly!"
+          echo "This script is running completely inside your separate branch."
